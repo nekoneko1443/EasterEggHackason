@@ -1,0 +1,11 @@
+.app {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.character-image {
+  width: 220px;
+  height: auto;
+  margin-top: 20px;
+}
+
