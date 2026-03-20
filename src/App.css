@@ -8,4 +8,19 @@
   height: auto;
   margin-top: 20px;
 }
+.btn-natural {
+  background: #e8e2da; /* くすみベージュ */
+  color: #3a3a3a;
+  border: 1px solid #d6cec4;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-natural:hover {
+  background: #dcd4ca;
+}
 
