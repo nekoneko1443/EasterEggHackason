@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function InputPage() {
   const [checks, setChecks] = useState({
@@ -34,6 +35,7 @@ export default function InputPage() {
     haircare: "ヘアケア",
     bathadd: "入浴剤の利用",
   };
+  const navigate = useNavigate();
 
   return (
     <div style={{ padding: "20px", fontSize: "18px" }}>
@@ -65,6 +67,7 @@ export default function InputPage() {
       <button onClick={saveData} style={{ marginTop: "20px" }}>
         保存
       </button>
+      <button onClick={() => navigate("/")}>ホーム画面へ</button>
     </div>
   );
 }
