@@ -9,7 +9,7 @@ export default function InputPage() {
     bath: false,
     skincare: false,
     haircare: false,
-    bathadd: false,
+    others: false,
   });
 
   const toggle = (key: keyof typeof checks) => {
@@ -26,13 +26,13 @@ export default function InputPage() {
   const today = new Date().toLocaleDateString("ja-JP");
 
   const items = {
-    facewash: "化粧落としただけ（洗顔のみ）",
+    // facewash: "化粧落としただけ（洗顔のみ）",
     shower: "シャワーのみ",
     bodywash: "全身洗った",
     bath: "湯船に入った",
     skincare: "スキンケア",
     haircare: "ヘアケア",
-    bathadd: "入浴剤の利用",
+    others: "ケアなし",
   };
   const navigate = useNavigate();
 
