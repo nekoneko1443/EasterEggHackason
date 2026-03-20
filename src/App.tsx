@@ -11,7 +11,7 @@ function App() {
       <InputPages /> */}
        <div className="app">
       <h1>ふろたま</h1>
-      <img src={egg1} alt="たまご" className="character-image" />
+      {/*<img src={egg1} alt="たまご" className="character-image" />*/}
     </div>
 
       <BrowserRouter>
