@@ -1,5 +1,4 @@
 import CalendarComponent from "../components/Calendar/Calendar";
-// import BathBarChart from "../components/graph/BarChart";
 import { useNavigate } from "react-router-dom";
 import Eggchange from "../components/Eggchange";
 import { useEffect, useState } from "react";
@@ -63,24 +62,36 @@ function Home() {
       } catch {}
     }
   }, []);
+
   return (
     <div className="home-container">
       <h1 className="page-title">ホーム</h1>
-      <div className="calendar-area">
-        <CalendarComponent />
-        <p>スキンケア回数: {skincareCount}</p>
-        <p>ヘアケア回数: {haircareCount}</p>
-        <p>ケアなし回数: {noneCount}</p>
 
-        <p>累計ポイント: {totalPoints}</p>
+      {/* ★ カレンダーと卵を横並びにするコンテナ */}
+      <div className="calendar-and-egg">
 
-        <Eggchange
-          totalPoints={totalPoints}
-          skincareCount={skincareCount}
-          haircareCount={haircareCount}
-          noneCount={noneCount}
-        />
+        {/* 左：カレンダー */}
+        <div className="calendar-area">
+          <CalendarComponent />
+        </div>
+
+        {/* 右：スキンケア情報＋卵 */}
+        <div className="egg-area">
+          <p>スキンケア回数: {skincareCount}</p>
+          <p>ヘアケア回数: {haircareCount}</p>
+          <p>ケアなし回数: {noneCount}</p>
+          <p>累計ポイント: {totalPoints}</p>
+
+          <Eggchange
+            totalPoints={totalPoints}
+            skincareCount={skincareCount}
+            haircareCount={haircareCount}
+            noneCount={noneCount}
+          />
+        </div>
+
       </div>
+
       <div className="calendar-button-area">
         <button className="btn-natural" onClick={() => navigate("/input")}>
           入力画面へ
