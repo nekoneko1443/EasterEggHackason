@@ -2,66 +2,66 @@ import Home from "./pages/Home";
 import InputPages from "./pages/InputPage";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Eggchange from "./components/Eggchange";
+// import { useEffect, useState } from "react";
+// import Eggchange from "./components/Eggchange";
 
 function App() {
-  const [totalPoints, setTotalPoints] = useState<number>(() => {
-    const saved = localStorage.getItem("furotamaData");
-    if (!saved) return 0;
-    try {
-      const parsed = JSON.parse(saved);
-      return parsed.totalPoints ?? 0;
-    } catch {
-      return 0;
-    }
-  });
+  // const [totalPoints, setTotalPoints] = useState<number>(() => {
+  //   const saved = localStorage.getItem("furotamaData");
+  //   if (!saved) return 0;
+  //   try {
+  //     const parsed = JSON.parse(saved);
+  //     return parsed.totalPoints ?? 0;
+  //   } catch {
+  //     return 0;
+  //   }
+  // });
 
-  const [skincareCount, setSkincareCount] = useState<number>(() => {
-    const saved = localStorage.getItem("furotamaData");
-    if (!saved) return 0;
-    try {
-      const parsed = JSON.parse(saved);
-      return parsed.skincareCount ?? 0;
-    } catch {
-      return 0;
-    }
-  });
+  // const [skincareCount, setSkincareCount] = useState<number>(() => {
+  //   const saved = localStorage.getItem("furotamaData");
+  //   if (!saved) return 0;
+  //   try {
+  //     const parsed = JSON.parse(saved);
+  //     return parsed.skincareCount ?? 0;
+  //   } catch {
+  //     return 0;
+  //   }
+  // });
 
-  const [haircareCount, setHaircareCount] = useState<number>(() => {
-    const saved = localStorage.getItem("furotamaData");
-    if (!saved) return 0;
-    try {
-      const parsed = JSON.parse(saved);
-      return parsed.haircareCount ?? 0;
-    } catch {
-      return 0;
-    }
-  });
+  // const [haircareCount, setHaircareCount] = useState<number>(() => {
+  //   const saved = localStorage.getItem("furotamaData");
+  //   if (!saved) return 0;
+  //   try {
+  //     const parsed = JSON.parse(saved);
+  //     return parsed.haircareCount ?? 0;
+  //   } catch {
+  //     return 0;
+  //   }
+  // });
 
-  const [noneCount, setNoneCount] = useState<number>(() => {
-    const saved = localStorage.getItem("furotamaData");
-    if (!saved) return 0;
-    try {
-      const parsed = JSON.parse(saved);
-      return parsed.noneCount ?? 0;
-    } catch {
-      return 0;
-    }
-  });
+  // const [noneCount, setNoneCount] = useState<number>(() => {
+  //   const saved = localStorage.getItem("furotamaData");
+  //   if (!saved) return 0;
+  //   try {
+  //     const parsed = JSON.parse(saved);
+  //     return parsed.noneCount ?? 0;
+  //   } catch {
+  //     return 0;
+  //   }
+  // });
 
-  useEffect(() => {
-    const saved = localStorage.getItem("furotamaData");
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        setTotalPoints(parsed.totalPoints ?? 0);
-        setSkincareCount(parsed.skincareCount ?? 0);
-        setHaircareCount(parsed.haircareCount ?? 0);
-        setNoneCount(parsed.noneCount ?? 0);
-      } catch {}
-    }
-  }, []);
+  // useEffect(() => {
+  //   const saved = localStorage.getItem("furotamaData");
+  //   if (saved) {
+  //     try {
+  //       const parsed = JSON.parse(saved);
+  //       setTotalPoints(parsed.totalPoints ?? 0);
+  //       setSkincareCount(parsed.skincareCount ?? 0);
+  //       setHaircareCount(parsed.haircareCount ?? 0);
+  //       setNoneCount(parsed.noneCount ?? 0);
+  //     } catch {}
+  //   }
+  // }, []);
   return (
     <>
       {/* <Home />
@@ -168,7 +168,7 @@ function App() {
 
         <hr /> */}
 
-        <p>スキンケア回数: {skincareCount}</p>
+        {/* <p>スキンケア回数: {skincareCount}</p>
         <p>ヘアケア回数: {haircareCount}</p>
         <p>ケアなし回数: {noneCount}</p>
 
@@ -179,7 +179,7 @@ function App() {
           skincareCount={skincareCount}
           haircareCount={haircareCount}
           noneCount={noneCount}
-        />
+        /> */}
       </div>
 
       <BrowserRouter>
