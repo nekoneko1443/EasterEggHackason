@@ -62,3 +62,20 @@
 body {
   background-color: #f5f5f5;
 }
+
+.calendar-and-egg {
+  display: flex; 
+  justify-content: center;
+  align-items: center;         
+  margin-right: 50px;
+  /* align-items: flex-start; 
+  gap: 10px;              */
+  
+}
+
+.egg-area {
+  margin-right: 47px;
+  /* text-align: left; 
+  width: 200px; 
+  margin-left: -40px;  */
+} 
