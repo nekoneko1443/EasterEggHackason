@@ -1,10 +1,10 @@
-import egg1 from "../../assets/egg1.png";
-import egg2 from "../../assets/egg2.png";
-import egg3 from "../../assets/egg3.png";
-import unc1 from "../../assets/unc1.png";
-import unc2 from "../../assets/unc2.png";
-import unc1plus from "../../assets/unc1plus.png";
-import unc2plus from "../../assets/unc2plus.png";
+import egg1 from "../assets/egg1.png";
+import egg2 from "../assets/egg2.png";
+import egg3 from "../assets/egg3.png";
+import unc1 from "../assets/unc1.png";
+import unc2 from "../assets/unc2.png";
+import unc1plus from "../assets/unc1plus.png";
+import unc2plus from "../assets/unc2plus.png";
 
 type EggchangeProps = {
   totalPoints: number;

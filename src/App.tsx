@@ -3,13 +3,12 @@ import InputPages from "./pages/InputPage";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Eggchange from "./components/components/Eggchange";
+import Eggchange from "./components/Eggchange";
 
 function App() {
   const [totalPoints, setTotalPoints] = useState<number>(() => {
     const saved = localStorage.getItem("furotamaData");
     if (!saved) return 0;
-
     try {
       const parsed = JSON.parse(saved);
       return parsed.totalPoints ?? 0;
@@ -21,7 +20,6 @@ function App() {
   const [skincareCount, setSkincareCount] = useState<number>(() => {
     const saved = localStorage.getItem("furotamaData");
     if (!saved) return 0;
-
     try {
       const parsed = JSON.parse(saved);
       return parsed.skincareCount ?? 0;
@@ -33,19 +31,17 @@ function App() {
   const [haircareCount, setHaircareCount] = useState<number>(() => {
     const saved = localStorage.getItem("furotamaData");
     if (!saved) return 0;
-
     try {
       const parsed = JSON.parse(saved);
       return parsed.haircareCount ?? 0;
     } catch {
-      return parsed.haircareCount ?? 0;
+      return 0;
     }
   });
 
   const [noneCount, setNoneCount] = useState<number>(() => {
     const saved = localStorage.getItem("furotamaData");
     if (!saved) return 0;
-
     try {
       const parsed = JSON.parse(saved);
       return parsed.noneCount ?? 0;
@@ -54,92 +50,18 @@ function App() {
     }
   });
 
-  const [lastRecordedDate, setLastRecordedDate] = useState<string>(() => {
-    const saved = localStorage.getItem("furotamaData");
-    if (!saved) return "";
-
-    try {
-      const parsed = JSON.parse(saved);
-      return parsed.lastRecordedDate ?? "";
-    } catch {
-      return "";
-    }
-  });
-
-  const [didBath, setDidBath] = useState(false);
-  const [usedCleanser, setUsedCleanser] = useState(false);
-  const [soakedTub, setSoakedTub] = useState(false);
-  const [didSkincare, setDidSkincare] = useState(false);
-  const [didHaircare, setDidHaircare] = useState(false);
-
-  const today = new Date().toLocaleDateString("ja-JP");
-  const alreadyRecordedToday = lastRecordedDate === today;
-
   useEffect(() => {
-    const dataToSave = {
-      totalPoints,
-      skincareCount,
-      haircareCount,
-      noneCount,
-      lastRecordedDate,
-    };
-
-    localStorage.setItem("furotamaData", JSON.stringify(dataToSave));
-  }, [totalPoints, skincareCount, haircareCount, noneCount, lastRecordedDate]);
-
-  const handleRecord = () => {
-    if (alreadyRecordedToday) {
-      alert("今日はもう記録済みです");
-      return;
+    const saved = localStorage.getItem("furotamaData");
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        setTotalPoints(parsed.totalPoints ?? 0);
+        setSkincareCount(parsed.skincareCount ?? 0);
+        setHaircareCount(parsed.haircareCount ?? 0);
+        setNoneCount(parsed.noneCount ?? 0);
+      } catch {}
     }
-
-    let dailyPoints = 0;
-
-    if (didBath) dailyPoints += 2;
-    if (usedCleanser) dailyPoints += 1;
-    if (soakedTub) dailyPoints += 1;
-
-    dailyPoints = Math.min(dailyPoints, 4);
-
-    setTotalPoints((prev) => prev + dailyPoints);
-
-    if (didSkincare) {
-      setSkincareCount((prev) => prev + 1);
-    }
-
-    if (didHaircare) {
-      setHaircareCount((prev) => prev + 1);
-    }
-
-    if (!didSkincare && !didHaircare) {
-      setNoneCount((prev) => prev + 1);
-    }
-
-    setLastRecordedDate(today);
-
-    setDidBath(false);
-    setUsedCleanser(false);
-    setSoakedTub(false);
-    setDidSkincare(false);
-    setDidHaircare(false);
-  };
-
-  const handleReset = () => {
-    setTotalPoints(0);
-    setSkincareCount(0);
-    setHaircareCount(0);
-    setNoneCount(0);
-    setLastRecordedDate("");
-
-    setDidBath(false);
-    setUsedCleanser(false);
-    setSoakedTub(false);
-    setDidSkincare(false);
-    setDidHaircare(false);
-
-    localStorage.removeItem("furotamaData");
-  };
-
+  }, []);
   return (
     <>
       {/* <Home />
@@ -147,9 +69,9 @@ function App() {
       <InputPages /> */}
       <div className="app">
         <h1>ふろたま</h1>
-        <p>今日: {today}</p>
+        {/* <p>今日: {today}</p> */}
 
-        {alreadyRecordedToday && <p>今日はすでに記録済みです</p>}
+        {/* {alreadyRecordedToday && <p>今日はすでに記録済みです</p>}
 
         <div style={{ margin: "10px 0" }}>
           <label>
@@ -244,7 +166,7 @@ function App() {
           リセット
         </button>
 
-        <hr />
+        <hr /> */}
 
         <p>スキンケア回数: {skincareCount}</p>
         <p>ヘアケア回数: {haircareCount}</p>
