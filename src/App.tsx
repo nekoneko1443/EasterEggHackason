@@ -10,7 +10,7 @@ function App() {
       <h1>バス記録アプリ</h1>
       <InputPages /> */}
        <div className="app">
-      <h1>ふろたま</h1>
+      <h1 className="logo-title">ふろたま</h1>
       {/*<img src={egg1} alt="たまご" className="character-image" />*/}
     </div>
 

@@ -8,8 +8,30 @@
   height: auto;
   margin-top: 20px;
 }
+
+.logo-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #60452e; 
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+}
+
+.page-title {
+  font-size: 36px;
+  font-weight: 500;
+  color: #957070;
+  margin-bottom: 12px;
+}
+
+.calendar-area {
+  margin-left: 40px;
+  margin-top: 30px;  
+}
+
 .btn-natural {
-  background: #e8e2da; /* くすみベージュ */
+  background: #e8e2da;
   color: #3a3a3a;
   border: 1px solid #d6cec4;
   padding: 10px 20px;
@@ -18,9 +40,22 @@
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
+  margin: 0; /* デフォルトでマージンなし */
+}
+
+.calendar-button-area {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding-right: 40px;
+  text-align: right;
 }
 
 .btn-natural:hover {
   background: #dcd4ca;
+}
+.home-container {
+  text-align: center;
 }
 
