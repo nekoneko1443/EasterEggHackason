@@ -64,10 +64,13 @@ function Home() {
     }
   }, []);
   return (
+
     <div>
       <div>
-        <h1>ホーム</h1>
-        <CalendarComponent />
+    <div className="home-container">
+  <h1 className="page-title">ホーム</h1>
+   <div className="calendar-area">
+  <CalendarComponent />
         <p>スキンケア回数: {skincareCount}</p>
         <p>ヘアケア回数: {haircareCount}</p>
         <p>ケアなし回数: {noneCount}</p>
@@ -81,9 +84,11 @@ function Home() {
           noneCount={noneCount}
         />
       </div>
-      <button className="btn-natural" onClick={() => navigate("/input")}>
-        入力画面へ
-      </button>
+  <div className="calendar-button-area">
+    <button className="btn-natural" onClick={() => navigate("/input")}>
+      入力画面へ
+    </button>
+  </div>
     </div>
   );
 }

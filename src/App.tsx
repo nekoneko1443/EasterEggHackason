@@ -181,7 +181,6 @@ function App() {
           noneCount={noneCount}
         /> */}
       </div>
-
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

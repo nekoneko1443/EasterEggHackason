@@ -14,7 +14,8 @@
 }
 
 .react-calendar__tile--now {
-  background: #ffeb3b;
+  background: #865506;
+  color: white;
 }
 
 .react-calendar__navigation button {
