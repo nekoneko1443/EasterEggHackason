@@ -1,4 +1,5 @@
 import CalendarComponent from "../components/Calendar/Calendar";
+import BathBarChart from "../components/graph/BarChart";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
@@ -9,7 +10,9 @@ function Home() {
         <h1>ホーム</h1>
         <CalendarComponent />
       </div>
-      <button onClick={() => navigate("/input")}>入力画面へ</button>
+      <button className="btn-natural" onClick={() => navigate("/input")}>
+        入力画面へ
+      </button>
     </div>
   );
 }

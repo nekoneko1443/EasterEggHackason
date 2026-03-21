@@ -1,7 +1,8 @@
 :root {
   --text: #6b6375;
   --text-h: #08060d;
-  --bg: #fff;
+   --bg: #f7f5f2;
+  --text: #1a3d66;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
@@ -108,4 +109,10 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+h1, h2, h3 {
+  color: #3a3a3a;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }

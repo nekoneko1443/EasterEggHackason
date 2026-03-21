@@ -9,7 +9,7 @@ export default function InputPage() {
     bath: false,
     skincare: false,
     haircare: false,
-    bathadd: false,
+    others: false,
   });
 
   const toggle = (key: keyof typeof checks) => {
@@ -25,22 +25,20 @@ export default function InputPage() {
 
   const today = new Date().toLocaleDateString("ja-JP");
 
-  // ← ここ！ return の「前」に items を置く
   const items = {
-    facewash: "化粧落としただけ（洗顔のみ）",
+    // facewash: "化粧落としただけ（洗顔のみ）",
     shower: "シャワーのみ",
     bodywash: "全身洗った",
     bath: "湯船に入った",
     skincare: "スキンケア",
     haircare: "ヘアケア",
-    bathadd: "入浴剤の利用",
+    others: "ケアなし",
   };
   const navigate = useNavigate();
 
   return (
     <div style={{ padding: "20px", fontSize: "18px" }}>
       {/* 日付 */}
-      <h2>日付（自動取得）</h2>
       <p>{today}</p>
 
       <h2>完了項目</h2>
@@ -64,10 +62,23 @@ export default function InputPage() {
         </div>
       ))}
 
-      <button onClick={saveData} style={{ marginTop: "20px" }}>
-        保存
-      </button>
-      <button onClick={() => navigate("/")}>ホーム画面へ</button>
+      <div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "20px",
+    marginTop: "20px",
+    alignItems: "center",
+  }}
+>
+  <button className="btn-natural" onClick={saveData}>
+  保存
+</button>
+
+<button className="btn-natural" onClick={() => navigate("/")}>
+  ホーム画面へ
+</button>
+</div>
     </div>
   );
 }
